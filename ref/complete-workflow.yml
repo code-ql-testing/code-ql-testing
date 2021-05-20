@@ -1,0 +1,31 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: Anthophila/codeql-action/codeql/init@master
+      # Override language selection by uncommenting this and choosing your languages
+      with:
+         languages: cpp
+    - name: make
+      run: make
+    - name: Perform CodeQL Analysis
+      uses: Anthophila/codeql-action/codeql/finish@master
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+      # Artifact name
+        name: main
+        path: .
