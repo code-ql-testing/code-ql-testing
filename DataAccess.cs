@@ -7,7 +7,6 @@ namespace CodeQLAlertTrigger
     public class DataAccess
     {
         private Dictionary<string, string> _users = new Dictionary<string, string>();
-        private const string SqlConnectionString = "Server=localhost;Database=SecurityDb;User Id=sa;Password=MyP@ssw0rd!;";
         private const string SqlConnectionString2 = "Server=localhost;Database=SecurityDb;User Id=sa;Password=MyP@ssw0rd2!;";
 
         public DataAccess()
