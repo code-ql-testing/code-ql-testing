@@ -49,6 +49,7 @@ namespace CodeQLAlertTrigger
                 _users.Add("user2", "password2");
                 _users.Add("user3", "password3");
                 _users.Add("user4", "password4");
+                _users.Add("user5", "password5");
 
             }
         }
