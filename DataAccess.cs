@@ -26,6 +26,15 @@ namespace CodeQLAlertTrigger
             return _users[username] == password;
         }
 
+        string GeneratePassword()
+        {
+            // https://codeql.github.com/codeql-query-help/csharp/cs-insecure-randomness/
+            // BAD: Password is generated using a cryptographically insecure RNG
+            Random gen = new Random();
+            string password = "mypassword" + gen.Next();
+            return password;
+        }
+        
         private void PopulateUsers()
         {
             try
